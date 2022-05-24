@@ -12,7 +12,7 @@ using System.Data.SqlClient;
 
 namespace SportSectionBaseData
 {
-    public partial class Form1 : Form
+    public partial class SportSection : Form
     {
         private SqlConnection sqlConnection = null;
 
@@ -44,7 +44,7 @@ namespace SportSectionBaseData
 
         //Разные переменные с дописанием названий табличек sqlDataAdapter, dataSet, newRowAdding используються для корректной работы кода/
 
-        public Form1()
+        public SportSection()
         {
             InitializeComponent();
         }
@@ -76,7 +76,7 @@ namespace SportSectionBaseData
         {
             try
             {
-                sqlDataAdapter_SportsMan = new SqlDataAdapter("SELECT *, 'Delete' AS [Delete] FROM SportsMan", sqlConnection);
+                sqlDataAdapter_SportsMan = new SqlDataAdapter("SELECT *, 'Delete' AS [Action] FROM SportsMan", sqlConnection);
 
                 sqlBuilder = new SqlCommandBuilder(sqlDataAdapter_SportsMan);
 
@@ -216,7 +216,7 @@ namespace SportSectionBaseData
 
                     dataGridView1[7, lastRow] = linkCell;
 
-                    row.Cells["Delete"].Value = "Insert";
+                    row.Cells["Action"].Value = "Insert";
                 }
             }
             catch (Exception ex)
@@ -239,7 +239,7 @@ namespace SportSectionBaseData
 
                     dataGridView1[7, rowIndex] = linkCell;
 
-                    editingRow.Cells["Delete"].Value = "Update";
+                    editingRow.Cells["Action"].Value = "Update";
                 }
             }
             catch (Exception ex)
@@ -266,7 +266,7 @@ namespace SportSectionBaseData
         {
             try
             {
-                sqlDataAdapter_Trainer = new SqlDataAdapter("SELECT *, 'Delete' AS [Delete] FROM Trainer", sqlConnection);
+                sqlDataAdapter_Trainer = new SqlDataAdapter("SELECT *, 'Delete' AS [Action] FROM Trainer", sqlConnection);
 
                 sqlBuilder = new SqlCommandBuilder(sqlDataAdapter_Trainer);
 
@@ -403,7 +403,7 @@ namespace SportSectionBaseData
 
                     dataGridView2[6, lastRow] = linkCell;
 
-                    row.Cells["Delete"].Value = "Insert";
+                    row.Cells["Action"].Value = "Insert";
                 }
             }
             catch (Exception ex)
@@ -426,7 +426,7 @@ namespace SportSectionBaseData
 
                     dataGridView2[6, rowIndex] = linkCell;
 
-                    editingRow.Cells["Delete"].Value = "Update";
+                    editingRow.Cells["Action"].Value = "Update";
                 }
             }
             catch (Exception ex)
@@ -453,7 +453,7 @@ namespace SportSectionBaseData
         {
             try
             {
-                sqlDataAdapter_SportsTimeGroup = new SqlDataAdapter("SELECT *, 'Delete' AS [Delete] FROM SportsTimeGroup", sqlConnection);
+                sqlDataAdapter_SportsTimeGroup = new SqlDataAdapter("SELECT *, 'Delete' AS [Action] FROM SportsTimeGroup", sqlConnection);
 
                 sqlBuilder = new SqlCommandBuilder(sqlDataAdapter_SportsTimeGroup);
 
@@ -595,7 +595,7 @@ namespace SportSectionBaseData
 
                     dataGridView3[9, lastRow] = linkCell;
 
-                    row.Cells["Delete"].Value = "Insert";
+                    row.Cells["Action"].Value = "Insert";
                 }
             }
             catch (Exception ex)
@@ -618,7 +618,7 @@ namespace SportSectionBaseData
 
                     dataGridView3[9, rowIndex] = linkCell;
 
-                    editingRow.Cells["Delete"].Value = "Update";
+                    editingRow.Cells["Action"].Value = "Update";
                 }
             }
             catch (Exception ex)
@@ -645,7 +645,7 @@ namespace SportSectionBaseData
         {
             try
             {
-                sqlDataAdapter_Sports = new SqlDataAdapter("SELECT *, 'Delete' AS [Delete] FROM Sports", sqlConnection);
+                sqlDataAdapter_Sports = new SqlDataAdapter("SELECT *, 'Delete' AS [Action] FROM Sports", sqlConnection);
 
                 sqlBuilder = new SqlCommandBuilder(sqlDataAdapter_Sports);
 
@@ -775,7 +775,7 @@ namespace SportSectionBaseData
 
                     dataGridView4[2, lastRow] = linkCell;
 
-                    row.Cells["Delete"].Value = "Insert";
+                    row.Cells["Action"].Value = "Insert";
                 }
             }
             catch (Exception ex)
@@ -798,7 +798,7 @@ namespace SportSectionBaseData
 
                     dataGridView4[2, rowIndex] = linkCell;
 
-                    editingRow.Cells["Delete"].Value = "Update";
+                    editingRow.Cells["Action"].Value = "Update";
                 }
             }
             catch (Exception ex)

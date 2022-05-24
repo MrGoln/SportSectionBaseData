@@ -1,6 +1,6 @@
 ﻿namespace SportSectionBaseData
 {
-    partial class Form1
+    partial class SportSection
     {
         /// <summary>
         /// Обязательная переменная конструктора.
@@ -380,14 +380,14 @@
             this.textBox4.TabIndex = 1;
             this.textBox4.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             // 
-            // Form1
+            // SportSection
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1027, 554);
             this.Controls.Add(this.tabControl1);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "SportSection";
+            this.Text = "Детская спортивная школа БД";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
