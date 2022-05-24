@@ -42,7 +42,7 @@ namespace SportSectionBaseData
 
         private bool newRowAdding_Sports = false;
 
-        //Разные переменные с дописанием названий табличек sqlDataAdapter, dataSet, newRowAdding используються для корректной работы кода
+        //Разные переменные с дописанием названий табличек sqlDataAdapter, dataSet, newRowAdding используються для корректной работы кода/
 
         public Form1()
         {
@@ -51,7 +51,7 @@ namespace SportSectionBaseData
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            sqlConnection = new SqlConnection(@"Data Source=DESKTOP-B9BQ7E6\MASTERDESQL;Initial Catalog=Sport_section;Integrated Security=True");
+            sqlConnection = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\sancu\source\repos\SportSectionBaseData\SportSectionBaseData\SportSectionDataBase.mdf;Integrated Security=True");
 
             sqlConnection.Open();
 
@@ -543,11 +543,11 @@ namespace SportSectionBaseData
 
                         dataSet_SportsTimeGroup.Tables["SportsTimeGroup"].Rows.Add(row);
 
-                        dataSet_SportsTimeGroup.Tables["SportsTimeGroup"].Rows.RemoveAt(dataSet_SportsTimeGroup.Tables["SportsTimeGroup"].Rows.Count - 2);
+                        dataSet_SportsTimeGroup.Tables["SportsTimeGroup"].Rows.RemoveAt(dataSet_SportsTimeGroup.Tables["SportsTimeGroup"].Rows.Count - 1);//2
+
+                        dataGridView3.Rows.RemoveAt(dataGridView3.Rows.Count - 2);//Под кодом sqlDataAdapter_SportsTimeGroup.Update(dataSet_SportsTimeGroup, "SportsTimeGroup");/
 
                         sqlDataAdapter_SportsTimeGroup.Update(dataSet_SportsTimeGroup, "SportsTimeGroup");
-
-                        dataGridView3.Rows.RemoveAt(dataGridView3.Rows.Count - 2);
 
                         newRowAdding_SportsTimeGroup = false;
                     }
